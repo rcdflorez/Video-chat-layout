@@ -87,20 +87,17 @@
   
         
         
-        <div class=" card px-0 ">
+        <div class="card px-0 ">
             <h4 class="card-header">Presentator</h4>
-            <div class="card-body videoContainer form-row justify-content-center mx-0" id="card-body">
+            <div class="videoContainer card-body form-row justify-content-center mx-0 d-flex align-items-center" id="card-body">
                
-                    <div class="align-middle videoItem col-6" id="videoItem1">1</div>
-                    <div class="align-middle videoItem col-6" id="videoItem1">2</div>
+                <div class="align-middle videoItem" id="videoItem1">1</div>
+                <div class="align-middle videoItem" id="videoItem2" style="display: none">2</div>
                 
             </div>
         </div>
         <div class="studentsSlider demo">
-            <div> Slide  1 </div>
-            <div> Slide  2 </div>
-            <div> Slide  3 </div>
-            ...
+            <div class="students-title"> Students </div>
           </div>
        
         <div class="row">
@@ -174,28 +171,28 @@ $('[data-toggle=sidebar-colapse]').click(function() {
 jQuery( document ).ready(function() {
   SidebarCollapse();/*
   $('.demo').slick({
-dots: true,
+  dots: true,
   infinite: true,
   speed: 300,
   slidesToShow: 3,
   centerMode: true,
   variableWidth: true
   });;*/
-//var cont1 = document.querySelector('#videoItem1');
-var cont1 = document.getElementById('videoItem1');
-var cardbody = document.getElementById('card-body');
-var cardbodyHeight = cardbody.offsetHeight-35;
+  //var cont1 = document.querySelector('#videoItem1');
+  var cont1 = document.getElementById('videoItem1');
+  var cardbody = document.getElementById('card-body');
+  var cardbodyHeight = cardbody.offsetHeight-35;
 
   function outputsize() {/*
- width.value = textbox.offsetWidth
- height.value = textbox.offsetHeight*/
- cont1.style.height = (cont1.offsetWidth * 0.5625)+'px';
- cont1.style.width = cardbodyHeight * 16/9+'px';
- //console.log(cont1.offsetWidth,cardbody.offsetHeight);
-}
+    width.value = textbox.offsetWidth
+    height.value = textbox.offsetHeight*/
+    cont1.style.height = (cont1.offsetWidth * 0.5625)+'px';
+    cont1.style.width = cardbodyHeight * 16/9+'px';
+    //console.log(cont1.offsetWidth,cardbody.offsetHeight);
+  }
+  
+  // new ResizeObserver(outputsize).observe(document.querySelector('#videoItem1'));
 
-
-new ResizeObserver(outputsize).observe(document.querySelector('#videoItem1'));
 });
 function SidebarCollapse () {
     $('.menu-collapsed').toggleClass('d-none');
@@ -369,20 +366,42 @@ h2 span {
 }
 
 
-.videoItem{    
-  
-    background-color: red;
-    border: solid 1px yellow;
-    height: calc(15vw * (16/9));
+.videoItem {
+  background-color: black;
+  border: 1px solid #666;
+  min-height: calc(15vw * (16/9));
+  max-width: 80%;
+  height: 80%;
+  flex: 1;
 }
-.studentsSlider{
-    
-    height: 150px;
-    background-color: #111B22;
+
+.studentsSlider {
+  height: 150px;
+  background-color: #111B22;
+  position: relative;
+}
+.students-title {
+  position: absolute;
+  padding: 4px 24px;
+  background: #AAA;
+  font-size: 0.8em;
+  display: table;
+  margin: 0 auto;
+  top: -12px;
+  left: calc(50% - 50px);
 }
 
 .card {
   height: calc(100vh -  150px);
+  border: none;
+  border-radius: 0;
+  background-color: #303030;
+}
+.card .card-header {
+  background-color: #444;
+  color: #dedede;
+  font-weight: 300;
+  border-radius: 0;
 }
 
   </style>
