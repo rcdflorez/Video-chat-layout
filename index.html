@@ -11,11 +11,12 @@
   <title>Lampre - Classroom</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet"/>
 
   <!-- Custom styles for this template -->
   
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
   <link href="./src/vendor/slick/slick.css" rel="stylesheet">
   <link href="./src/vendor/slick/slick-theme.css" rel="stylesheet">
 
@@ -40,24 +41,21 @@
             <!-- Menu with submenu -->
             <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-start align-items-center">
-                    <span class="fa fa-dashboard fa-fw mr-3"></span> 
-                    
-                    <span class="menu-collapsed">Dashboard</span>
-                    <span class="submenu-icon ml-auto"></span>
+                    <span class="fas fa-video fa-fw mr-3"></span> 
+                    <!--<input type="checkbox" data-onstyle="outline-primary" data-offstyle="outline-primary" checked data-toggle="toggle" data-size="xs">-->
+                    <span class="menu-collapsed">Video
+                     
+                      </span>
                 </div>
             </a>
-            <!-- Submenu content -->
-            <div id='submenu1' class="collapse sidebar-submenu">
-                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">Charts</span>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">Reports</span>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">Tables</span>
-                </a>
-            </div>
+            <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fas fa-microphone fa-fw mr-3"></span> 
+                    
+                    <span class="menu-collapsed">Audio</span>
+                </div>
+            </a>
+     
             <!-- Separator with title -->
             <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
                 <small>OPTIONS</small>
@@ -65,7 +63,8 @@
             <!-- /END Separator -->
             <a href="#" class="bg-dark list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-start align-items-center">
-                    <span class="fa fa-users fa-fw mr-3"></span>
+                    <span class="fas fa-users fa-fw mr-3"></span>
+                    
                     <span class="menu-collapsed">Students <span class="badge badge-pill badge-primary ml-2">5</span></span>
                 </div>
             </a>
@@ -74,7 +73,7 @@
             <!-- /END Separator -->
             <a href="#" data-toggle="sidebar-colapse" class="bg-dark list-group-item list-group-item-action d-flex align-items-center">
                 <div class="d-flex w-100 justify-content-start align-items-center">
-                    <span id="collapse-icon" class="mr-3 fa fa-users"></span>
+                    <span id="collapse-icon" class="mr-3 fas fa-angle-double-right"></span>
                     <span id="collapse-text" class="menu-collapsed">Collapse</span>
                     
 
@@ -84,26 +83,32 @@
     </div><!-- sidebar-container END -->
 
     <!-- MAIN -->
-    <div class="col d-block">
+    <div class="col d-block px-0">
   
         
         
-        <div class=" card mt-2">
+        <div class=" card px-0 ">
             <h4 class="card-header">Presentator</h4>
-            <div class="card-body videoContainer form-row justify-content-center">
+            <div class="card-body videoContainer form-row justify-content-center mx-0" id="card-body">
                
-                    <div class="videoItem col-6" id="videoItem1">1</div>
-                    <div class="videoItem col-6" id="videoItem1">2</div>
+                    <div class="align-middle videoItem col-6" id="videoItem1">1</div>
+                    <div class="align-middle videoItem col-6" id="videoItem1">2</div>
                 
             </div>
         </div>
+        <div class="studentsSlider demo">
+            <div> Slide  1 </div>
+            <div> Slide  2 </div>
+            <div> Slide  3 </div>
+            ...
+          </div>
        
         <div class="row">
-          <div class="col-md-9 col-center m-auto">
-            
+          <!-- <div class="col-md-9 col-center m-auto">
+           
             <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
 
-              <!-- Wrapper for carousel items -->
+             
               <div class="carousel-inner">
                 <div class="item carousel-item active">
                   <div class="row">
@@ -128,22 +133,17 @@
                   </div>
 
               </div>
-              <!-- Carousel controls -->
+             
               <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
                 <i class="fa fa-chevron-left"></i>
               </a>
               <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
                 <i class="fa fa-chevron-right"></i>
               </a>
-            </div>
+            </div>-->
           </div>
         </div>
-        <div class="slider demo">
-            <div> Slide  1 </div>
-            <div> Slide  2 </div>
-            <div> Slide  3 </div>
-            ...
-          </div>
+    
 
     </div><!-- Main Col END -->
     
@@ -152,8 +152,9 @@
   <!-- /#wrapper -->
 
   <!-- Bootstrap core JavaScript -->
-  <script src="src/vendor/jquery/jquery.min.js"></script>
-  <script src="src/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
   <script src="./src/vendor/slick/slick.js"></script>
 
 
@@ -170,17 +171,27 @@ $('#collapse-icon').addClass('fa-angle-double-left');
 $('[data-toggle=sidebar-colapse]').click(function() {
     SidebarCollapse();
 });
-$( document ).ready(function() {
-  SidebarCollapse();
-  //$('.demo').slick();
+jQuery( document ).ready(function() {
+  SidebarCollapse();/*
+  $('.demo').slick({
+dots: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 3,
+  centerMode: true,
+  variableWidth: true
+  });;*/
 //var cont1 = document.querySelector('#videoItem1');
 var cont1 = document.getElementById('videoItem1');
+var cardbody = document.getElementById('card-body');
+var cardbodyHeight = cardbody.offsetHeight-35;
 
   function outputsize() {/*
  width.value = textbox.offsetWidth
  height.value = textbox.offsetHeight*/
  cont1.style.height = (cont1.offsetWidth * 0.5625)+'px';
- console.log(cont1.offsetWidth);
+ cont1.style.width = cardbodyHeight * 16/9+'px';
+ //console.log(cont1.offsetWidth,cardbody.offsetHeight);
 }
 
 
@@ -356,9 +367,7 @@ h2 span {
 .carousel-indicators li.active {
 	background: #555;
 }
-.card .card-body{
-  height: 400px;
-}
+
 
 .videoItem{    
   
@@ -366,7 +375,14 @@ h2 span {
     border: solid 1px yellow;
     height: calc(15vw * (16/9));
 }
-.videoContainer{
+.studentsSlider{
+    
+    height: 150px;
+    background-color: #111B22;
+}
+
+.card {
+  height: calc(100vh -  150px);
 }
 
   </style>
